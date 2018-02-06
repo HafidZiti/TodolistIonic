@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar color="primary">
+        <ion-buttons end>
+          <button ion-button icon-only (click)="btn_add_clicked(id_liste)">
+            <ion-icon name="md-add-circle"></ion-icon>
+          </button>
+        </ion-buttons>
+
+        <ion-title>
+          <strong>{{name_liste}}</strong>
+        </ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of liste_items">
+      <ion-item>
+        <ion-row>
+          <ion-col col-1>
+               <ion-icon  *ngIf="item.complete" name="md-checkmark-circle" color="danger"></ion-icon>
+               <ion-icon *ngIf="!item.complete" name="md-clock" color="secondary"></ion-icon>
+          </ion-col>
+          <ion-col col-11>
+               <h2>{{item.name}}</h2>
+          </ion-col>
+        </ion-row>
+        <p>{{item.uuid | slice:0:15}}...</p>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="primary" icon-start (click)="openModal(id_liste,item.uuid,item.name,item.desc,item.complete)"><!---->
+          <ion-icon name="ios-create"></ion-icon>
+          Edit
+        </button>
+        <button ion-button color="secondary" icon-start (click)="removeTodo(id_liste,item.uuid)">
+          <ion-icon name="md-remove-circle"></ion-icon>
+          Supp
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+    </ion-list>
+
+</ion-content>

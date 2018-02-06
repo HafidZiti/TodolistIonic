@@ -1,6 +1,6 @@
 {
   "name": "Todoliste",
-  "app_id": "",
+  "app_id": "8ffe852a",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

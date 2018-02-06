@@ -1,0 +1,54 @@
+<!--
+  Generated template for the ModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>Modifier une Tâche : <strong>{{todaData_recive.name}}</strong></ion-title>
+
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()"> <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <form (ngSubmit)="chargeData()">
+
+  <ion-list>
+    <ion-item>
+      <ion-label color="primary">Uuid</ion-label>
+      <ion-input disabled="true" type="text" value="{{todaData_recive.uuid}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary">Titre</ion-label>
+      <ion-input type="text"  [(ngModel)]="todaData_recive.name" name="name"  value="{{todaData_recive.name}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary">Description</ion-label>
+      <ion-textarea [(ngModel)]="todaData_recive.desc"  name="desc" value="{{todaData_recive.desc}}" rows="3" ></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary">Complete</ion-label>
+      <ion-checkbox  [(ngModel)]="todaData_recive.complete"  name="complete" disabled="{{completeORnot}}"
+                     checked="{{todaData_recive.complete}}" item-right></ion-checkbox >
+    </ion-item>
+
+  </ion-list>
+  <br>
+    <ion-buttons text-center>
+      <button ion-button color="dark" type="submit">Save</button>
+    </ion-buttons>
+
+  </form>
+
+</ion-content>

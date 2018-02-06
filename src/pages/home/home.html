@@ -1,17 +1,28 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
+    <ion-buttons end>
+      <button ion-button icon-only (click)="btn_add_clicked()">
+        <ion-icon name="md-add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
-</ion-content>
+
+  <h2>Welcome to TodoListe!</h2>
+
+  <ion-content>
+    <ion-item-group>
+      <ion-item *ngFor="let item of Todos" (click)="onloadItemsPage(item.uuid,item.name)" ><strong>{{ item.name}}</strong>
+      <br>
+        <i *ngIf="nbr_non_fini(item.items)!=-1">Nombre de TODOs non fini : <b>{{nbr_non_fini(item.items)}}</b></i>
+        <i *ngIf="nbr_non_fini(item.items)==-1">Liste ne Contient aucun items !!</i>
+        <ion-icon name="arrow-dropright-circle"  color ="primary" item-right></ion-icon>
+
+      </ion-item>
+    </ion-item-group>
+  </ion-content>
+
+

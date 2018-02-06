@@ -1,0 +1,24 @@
+Nom du projet
+TodoListe
+
+Nom public help_outline
+project-935347106718
+
+ID du projet help_outline
+todoliste-8564f
+Clé API Web
+AIzaSyD9B87Z4uDdKZG1Id7dkfUqJQ27XoVXhRw
+
+
+Voici votre ID client
+935347106718-vplrn1pumrt7u1gabckkkh6d8vv0lk77.apps.googleusercontent.com
+
+
+Voici votre code secret client
+uLuCsrxt_v6RsbKQRyiWRdy3
+
+
+
+935347106718-vplrn1pumrt7u1gabckkkh6d8vv0lk77
+
+ionic plugin add cordova-plugin-googleplus --save --variable REVERSED_CLIENT_ID=935347106718-vplrn1pumrt7u1gabckkkh6d8vv0lk77.apps.googleusercontent.com
