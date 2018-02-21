@@ -7,7 +7,7 @@
         </ion-buttons>
 
         <ion-title>
-          <strong>{{name_liste}}</strong>
+          <strong>{{CurrenetList.name}}</strong>
         </ion-title>
 
   </ion-navbar>
@@ -15,7 +15,7 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item-sliding *ngFor="let item of liste_items">
+    <ion-item-sliding *ngFor="let item of (liste_items | toArray)">
       <ion-item>
         <ion-row>
           <ion-col col-1>
@@ -33,7 +33,7 @@
           <ion-icon name="ios-create"></ion-icon>
           Edit
         </button>
-        <button ion-button color="secondary" icon-start (click)="removeTodo(id_liste,item.uuid)">
+        <button ion-button color="secondary" icon-start (click)="removeTodo(item.uuid)">
           <ion-icon name="md-remove-circle"></ion-icon>
           Supp
         </button>

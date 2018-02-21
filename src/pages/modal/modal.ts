@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavParams, ViewController } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavParams, ViewController} from 'ionic-angular';
 
 /**
  * Generated class for the ModalPage page.
@@ -17,26 +17,24 @@ export class ModalPage {
 
   todaData_recive;
   completeORnot;
+
   constructor(private view: ViewController, public navParams: NavParams) {
   }
 
 
-  chargeData()
-  {
+  chargeData() {
     console.log("donnée changées", this.todaData_recive);
     this.view.dismiss(this.todaData_recive);
   }
 
   ionViewWillLoad() {
-    let data =  this.navParams.get('dataName');
-    console.log('message receve',data);
-    this.completeORnot=data.complete;
+    let data = this.navParams.get('dataName');
+    console.log('message receve', data);
+    this.completeORnot = data.complete;
     this.todaData_recive = data;
-
   }
 
-  closeModal()
-  {
+  closeModal() {
     this.view.dismiss(null);
   }
 

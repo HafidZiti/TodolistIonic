@@ -15,7 +15,7 @@
 
   <ion-content>
     <ion-item-group>
-      <ion-item *ngFor="let item of Todos" (click)="onloadItemsPage(item.uuid,item.name)" ><strong>{{ item.name}}</strong>
+      <ion-item *ngFor="let item of Todos" (click)="onloadItemsPage(item)"><strong>{{ item.name}}</strong>
       <br>
         <i *ngIf="nbr_non_fini(item.items)!=-1">Nombre de TODOs non fini : <b>{{nbr_non_fini(item.items)}}</b></i>
         <i *ngIf="nbr_non_fini(item.items)==-1">Liste ne Contient aucun items !!</i>
@@ -24,5 +24,8 @@
       </ion-item>
     </ion-item-group>
   </ion-content>
+</ion-content>
+
+
 
 

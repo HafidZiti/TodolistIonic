@@ -15,13 +15,17 @@ import {ItemesPage} from "../pages/itemes/itemes";
 import { AngularFireModule } from 'angularfire2';
 import {FIREBASE_ِCONFIG} from "./app.firebase.config";
 import{AngularFireAuthModule} from 'angularfire2/auth';
+import{AngularFireDatabaseModule} from 'angularfire2/database';
 import {LoginPage} from "../pages/login/login";
+import { ServicesFirebaseSeviceProvider } from '../services/services-firebase';
+import { PipesModule }    from '../pipes/pipes.module';
+
 
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
-    ContactPage,
+      ContactPage,
     HomePage,
     TabsPage,
     ItemesPage,
@@ -31,7 +35,9 @@ import {LoginPage} from "../pages/login/login";
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireAuthModule,
-    AngularFireModule.initializeApp(FIREBASE_ِCONFIG)
+    AngularFireModule.initializeApp(FIREBASE_ِCONFIG),
+    AngularFireDatabaseModule,
+    PipesModule
 
   ],
   bootstrap: [IonicApp],
@@ -48,7 +54,8 @@ import {LoginPage} from "../pages/login/login";
     StatusBar,
     SplashScreen,
     TodoServiceProvider,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ServicesFirebaseSeviceProvider
   ]
 })
 export class AppModule {}

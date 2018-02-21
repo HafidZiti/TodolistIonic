@@ -9,7 +9,7 @@ import { v4 as uuid } from 'uuid';
 
 @Injectable()
 export class TodoServiceProvider {
-
+/*
   data:TodoList[] = [
     {
       uuid : "a351e558-29ce-4689-943c-c3e97be0df8b",
@@ -102,5 +102,5 @@ export class TodoServiceProvider {
     let new_liste:TodoList = {uuid:newi_id, name: nameList, items : []};
     console.log("l'objet cree: ",new_liste);
     this.data.push(new_liste);
-  }
+  }*/
 }
